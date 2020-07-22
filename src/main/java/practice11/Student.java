@@ -13,6 +13,10 @@ public class Student extends Person{
         return klass;
     }
 
+    public void setKlass(Klass klass) {
+        this.klass = klass;
+    }
+
     @Override
     public String introduce() {
         if (null != klass.getLeader() && klass.getLeader().getId() == getId()) {

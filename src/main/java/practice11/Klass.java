@@ -28,19 +28,20 @@ public class Klass {
         return String.format("Class %d", number);
     }
 
-    public void assignLeader(Student student) {
-        if (0 == this.students.size()) {
+    public void assignLeader(Student leader) {
+        if (0 == this.students.size() || null == leader.getKlass() || leader.getKlass().getNumber() != getNumber()) {
             System.out.print("It is not one of us.\n");
             return;
         }
-        this.leader = student;
+        this.leader = leader;
         for (Teacher teacher :
                 teachers) {
-            teacher.updateAssignMsg(student, this);
+            teacher.updateAssignMsg(leader, this);
         }
     }
 
     public void appendMember(Student student) {
+        student.setKlass(this);
         this.students.add(student);
         for (Teacher teacher :
                 teachers) {
