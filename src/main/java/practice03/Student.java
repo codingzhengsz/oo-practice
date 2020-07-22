@@ -2,19 +2,19 @@ package practice03;
 
 public class Student extends Person {
 
-    private int Klass;
+    private int klass;
 
-    public Student(String name, int age, int Klass) {
+    public Student(String name, int age, int klass) {
         super(name, age);
-        this.Klass = Klass;
+        this.klass = klass;
     }
 
     public int getKlass() {
-        return Klass;
+        return klass;
     }
 
     @Override
     public String introduce() {
-        return String.format("I am a Student. I am at Class %d.", this.Klass);
+        return String.format("I am a Student. I am at Class %d.", this.klass);
     }
 }
